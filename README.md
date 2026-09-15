@@ -648,12 +648,15 @@ This page helps evaluate:
 ![Performance Insights Dashboard](./image/Performance%20Insights.png)
 
 ---
-
 # 🎬 Overall Dashboard Walkthrough
 
-An overall walkthrough video is included to demonstrate the report experience.
+An overall walkthrough is included to demonstrate the interactive Power BI report experience.
 
-### ▶️ Watch the Dashboard Walkthrough
+### Dashboard Preview
+
+![Overall Dashboard Walkthrough](./image/overall%20Dashboard.gif)
+
+### ▶️ Full Dashboard Walkthrough
 
 [▶️ Watch Overall Dashboard Walkthrough](./image/overall%20Dashbboard.mp4)
 
@@ -665,7 +668,6 @@ The walkthrough demonstrates:
 * KPI interactions
 * Major visuals
 * Overall report experience
-
 ---
 
 # 🔍 Business Questions
