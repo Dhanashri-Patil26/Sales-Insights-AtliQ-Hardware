@@ -650,24 +650,12 @@ This page helps evaluate:
 ---
 # 🎬 Overall Dashboard Walkthrough
 
-An overall walkthrough is included to demonstrate the interactive Power BI report experience.
+The overall dashboard walkthrough is presented below.
 
 ### Dashboard Preview
 
-![Overall Dashboard Walkthrough](./image/overall%20Dashboard.gif)
+![Overall Dashboard Walkthrough](./image/overall%20Dashboard-.gif)
 
-### ▶️ Full Dashboard Walkthrough
-
-[▶️ Watch Overall Dashboard Walkthrough](./image/overall%20Dashbboard.mp4)
-
-The walkthrough demonstrates:
-
-* Dashboard navigation
-* Page-to-page interaction
-* Filters and slicers
-* KPI interactions
-* Major visuals
-* Overall report experience
 ---
 
 # 🔍 Business Questions
