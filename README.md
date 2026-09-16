@@ -578,9 +578,13 @@ The **Key Insights** page provides an overall view of sales performance.
 
 This page provides an overall view of **sales, markets, products, customers and sales trends**.
 
-### Dashboard
+# 🎬 Overall Dashboard Walkthrough
 
-![Key Insights Dashboard](./image/Key%20Insights.png)
+The overall dashboard walkthrough is presented below.
+
+### Dashboard Preview
+
+![Overall Dashboard Walkthrough](./image/overall%20Dashboard-.gif)
 
 ---
 
