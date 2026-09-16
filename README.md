@@ -578,13 +578,6 @@ The **Key Insights** page provides an overall view of sales performance.
 
 This page provides an overall view of **sales, markets, products, customers and sales trends**.
 
-# 🎬 Overall Dashboard Walkthrough
-
-The overall dashboard walkthrough is presented below.
-
-### Dashboard Preview
-
-![Overall Dashboard Walkthrough](./image/overall%20Dashboard-.gif)
 
 ---
 
@@ -651,11 +644,13 @@ This page helps analyze **year-over-year performance, profit targets, market per
 
 ---
 
-# 🎬 Dashboard Walkthrough
+# 🎬 Overall Dashboard Walkthrough
 
-The repository includes an overall walkthrough video demonstrating the Power BI report, including navigation, filters, KPIs and major visuals.
+The overall dashboard walkthrough is presented below.
 
-**Video:** `image/overall Dashbboard.mp4`
+### Dashboard Preview
+
+![Overall Dashboard Walkthrough](./image/overall%20Dashboard-.gif)
 
 ---
 
