@@ -1,8 +1,8 @@
 # 📊 Sales Insights Data Analysis – AtliQ Hardware
 
-> A Power BI Sales Analytics project focused on transforming transactional sales data into meaningful business insights using **MySQL, Power Query, DAX and Power BI**.
+> A Power BI Sales Analytics project that transforms transactional sales data into meaningful business insights using **MySQL, Power Query, DAX and Power BI**.
 
-This project is based on the **AtliQ Hardware Sales Insights learning case study**. I used the learning material to understand the business problem, dataset and overall analytics workflow, while independently implementing the **data exploration, SQL analysis, data cleaning, data modeling, DAX measures, dashboard design and presentation**.
+This project is based on the **AtliQ Hardware Sales Insights learning case study**. I used the learning material to understand the business problem, dataset and analytics workflow, while independently implementing the **data exploration, SQL analysis, data cleaning, data modeling, DAX measures, dashboard design and presentation**.
 
 > **Transparency:** The original AtliQ Hardware business case and learning material are not my original creation. This repository represents my own practical implementation and portfolio presentation based on publicly available learning resources.
 
@@ -27,7 +27,7 @@ This project is based on the **AtliQ Hardware Sales Insights learning case study
 * [Power BI Dashboard](#-power-bi-dashboard)
 * [Business Questions](#-business-questions)
 * [Repository Structure](#-repository-structure)
-* [How to Run](#-how-to-run-the-project)
+* [How to Run the Project](#-how-to-run-the-project)
 * [Limitations](#-limitations)
 * [Learning Outcomes](#-learning-outcomes)
 
@@ -39,7 +39,7 @@ AtliQ Hardware is presented in the learning case study as an India-based company
 
 As the business grows, the Sales Director needs a better way to understand sales performance. Sales information is spread across different markets, and reporting involves manual data gathering.
 
-This makes it difficult to get a clear and consistent view of:
+This makes it difficult to get a clear view of:
 
 * Sales performance
 * Market performance
@@ -65,13 +65,13 @@ The project aims to create an interactive Power BI report that helps users:
 
 # 🎯 Project Objectives
 
-The main objectives of this project are:
+The main objectives of this project are to:
 
 1. Explore and understand the available sales data.
 2. Analyze customers, products, markets, transactions and dates using MySQL.
 3. Identify data-quality issues in the source data.
 4. Clean and transform the data using Power Query.
-5. Convert USD transactions into INR using the case-study assumption.
+5. Normalize USD transactions into INR using the case-study assumption.
 6. Build a structured, star-schema-oriented data model.
 7. Create reusable DAX measures for sales and profitability analysis.
 8. Perform year-over-year analysis.
@@ -83,7 +83,7 @@ The main objectives of this project are:
 
 # 🧭 Project Planning
 
-The project planning follows the **AIMS Grid approach** used in the learning case study.
+The project follows the **AIMS Grid approach** used in the learning case study.
 
 ### Purpose
 
@@ -142,7 +142,7 @@ Business Analysis
 
 The dataset contains transaction-level sales information along with customer, product, market and date tables.
 
-The first step was to understand the available tables and identify data-quality issues before building the Power BI report.
+The first step was to understand the available tables and identify data-quality issues before creating the Power BI report.
 
 ## Available Tables
 
@@ -168,7 +168,7 @@ The database was imported into **MySQL Workbench** for initial exploration and S
 
 **MySQL** was used to explore the dataset, understand the table structure and identify data-quality issues before the Power BI transformation stage.
 
-### SQL Analysis Covered
+### Analysis Performed
 
 #### Customer Analysis
 
@@ -179,7 +179,6 @@ The database was imported into **MySQL Workbench** for initial exploration and S
 #### Market Analysis
 
 * Checked available markets
-* Analyzed market-level transactions
 * Compared sales across markets
 * Investigated blank or invalid market records
 
@@ -235,7 +234,7 @@ Data Model
 
 ### 1. Market Data
 
-Blank and invalid market records were identified during data exploration and filtered during Power Query transformation.
+Blank and invalid market records identified during data exploration were filtered during the Power Query transformation.
 
 ### 2. Transaction Data
 
@@ -246,7 +245,7 @@ The transaction data was checked for:
 * Invalid records
 * Currency inconsistencies
 
-Unwanted zero and negative sales records were removed from the analysis.
+Zero and negative sales records were removed from the analysis.
 
 ### 3. Currency Normalization
 
@@ -281,7 +280,7 @@ USD\r
 
 These variations were investigated during SQL analysis and handled during the data-cleaning process.
 
-### 5. Load Transformed Data
+### 5. Load the Transformed Data
 
 After completing the required transformations, **Close & Apply** was used to load the cleaned data into Power BI.
 
@@ -289,7 +288,7 @@ After completing the required transformations, **Close & Apply** was used to loa
 
 # 🧩 Data Modeling
 
-The cleaned dataset was organized into a **star-schema-oriented model**.
+The cleaned dataset was organized into a **star-schema-oriented data model**.
 
 The transaction table acts as the central fact table, while customers, products, markets and dates act as dimension tables.
 
@@ -329,18 +328,13 @@ The model supports analysis across:
 
 # 📐 DAX Measures
 
-DAX was used to create reusable measures for:
+DAX was used in Power BI to create reusable measures for **sales KPIs, profitability, contribution analysis, year-over-year comparison, growth analysis and profit-target analysis**.
 
-* Sales KPIs
-* Profitability
-* Contribution analysis
-* Year-over-year comparison
-* Growth analysis
-* Profit-target analysis
-
-## Core Measures
+## 1. Core KPI Measures
 
 ### Revenue
+
+Calculates total sales revenue.
 
 ```DAX
 Revenue =
@@ -349,6 +343,8 @@ SUM('Sales transactions'[sales_amount])
 
 ### Sales Quantity
 
+Calculates the total quantity of products sold.
+
 ```DAX
 Sales Qty =
 SUM('sales transactions'[sales_qty])
@@ -356,12 +352,16 @@ SUM('sales transactions'[sales_qty])
 
 ### Total Profit Margin
 
+Calculates the total profit margin.
+
 ```DAX
 Total Profit Margin =
 SUM('Sales transactions'[Profit_Margin])
 ```
 
 ### Profit Margin %
+
+Calculates profit margin as a percentage of revenue.
 
 ```DAX
 Profit Margin % =
@@ -374,7 +374,9 @@ DIVIDE(
 
 ---
 
-## Contribution Measures
+## 2. Contribution Analysis
+
+These measures are used to understand the contribution of different markets, customers and products to overall revenue and profit margin.
 
 ### Revenue Contribution %
 
@@ -408,7 +410,9 @@ DIVIDE(
 
 ---
 
-## Year-over-Year Measures
+## 3. Year-over-Year Analysis
+
+These measures compare the selected period with the corresponding period from the previous year.
 
 ### Revenue LY
 
@@ -442,7 +446,9 @@ CALCULATE(
 
 ---
 
-## Growth Measures
+## 4. Growth Analysis
+
+These measures calculate the percentage change between the current period and the previous year.
 
 ### Revenue Growth %
 
@@ -476,11 +482,13 @@ DIVIDE(
 
 ---
 
-## Profit Target Analysis
+## 5. Profit Target Analysis
 
 A selectable profit-target range was created using a DAX-generated table.
 
 ### Profit Target 2
+
+Creates target values from **-5% to 15%** with a **1% interval**.
 
 ```DAX
 Profit Target 2 =
@@ -491,9 +499,9 @@ GENERATESERIES(
 )
 ```
 
-This creates the profit-target values used by the report.
-
 ### Profit Target Value 2
+
+Returns the currently selected profit target.
 
 ```DAX
 Profit Target Value 2 =
@@ -502,9 +510,9 @@ SELECTEDVALUE(
 )
 ```
 
-This returns the currently selected target.
-
 ### Target Difference
+
+Calculates the difference between actual profit margin and the selected target.
 
 ```DAX
 Target Diff =
@@ -512,46 +520,36 @@ Target Diff =
     - 'Profit Target 2'[Profit Target Value 2]
 ```
 
-This calculates the difference between actual profit margin and the selected target.
-
 ---
 
 # 📊 Power BI Dashboard
 
-The final Power BI report contains **four pages**, with each page designed for a specific analytical purpose.
+The final report contains **four pages**, with each page designed for a specific analytical purpose.
 
-```text
-Home
-  ↓
-Key Insights
-  ↓
-Profit Analysis
-  ↓
-Performance Insights
-```
+### Dashboard Pages
+
+1. **Home** – Landing and navigation
+2. **Key Insights** – Overall sales analysis
+3. **Profit Analysis** – Profitability and contribution analysis
+4. **Performance Insights** – Comparative and target analysis
+
+---
+# 🏠 Home View
+
+In the **Home View**, buttons for all report views are available. Users can click on a button to navigate directly to the corresponding view page.
+
+### Available Views
+
+* **Key Insights**
+* **Profit Analysis**
+* **Performance Insights**
+
+# 🎬 Overall Dashboard
+![Overall Dashboard Walkthrough](./image/overall%20Dashboard-.gif)
 
 ---
 
-# 🏠 Home
-
-The **Home** page acts as the landing and navigation page.
-
-### Includes
-
-* Project branding
-* Page navigation
-* Navigation icons
-* Report layout and design elements
-
-### Home Dashboard
-
-![Home Dashboard](./image/Home.png)
-
-The navigation and dashboard assets are available in the `logo/` folder.
-
----
-
-# 📈 Key Insights
+# 📈 Key Insights 
 
 The **Key Insights** page provides an overall view of sales performance.
 
@@ -581,7 +579,6 @@ This page provides an overall view of **sales, markets, products, customers and 
 ### Dashboard
 
 ![Key Insights Dashboard](./image/Key%20Insights.png)
-
 
 ---
 
@@ -648,19 +645,9 @@ This page helps analyze **year-over-year performance, profit targets, market per
 
 ---
 
-# 🎬 Overall Dashboard Walkthrough
-
-The overall dashboard walkthrough is presented below.
-
-### Dashboard Preview
-
-![Overall Dashboard Walkthrough](./image/overall%20Dashboard-.gif)
-
----
-
 # 🔍 Business Questions
 
-The dashboard was designed to answer practical business questions such as:
+The dashboard was designed to answer practical business questions.
 
 ### Sales
 
@@ -761,7 +748,7 @@ Open:
 
 to inspect the data-cleaning and currency-normalization steps.
 
-### 4. Review DAX
+### 4. Review DAX Measures
 
 Review the measures used for:
 
@@ -788,7 +775,15 @@ sales_SQL_analysis.sql
 
 Navigate through:
 
-**Home → Key Insights → Profit Analysis → Performance Insights**
+```text
+Home
+   ↓
+Key Insights
+   ↓
+Profit Analysis
+   ↓
+Performance Insights
+```
 
 ---
 
@@ -823,11 +818,11 @@ This project provided practical experience across the end-to-end data analytics 
 
 * Data Exploration
 * Business Analysis
-* Data Visualization
 * KPI Development
 * Year-over-Year Analysis
 * Profitability Analysis
 * Target Analysis
+* Data Visualization
 * Dashboard Design
 * Data Storytelling
 
