@@ -14,25 +14,6 @@ This project is based on the **AtliQ Hardware Sales Insights learning case study
 
 ---
 
-## 📌 Table of Contents
-
-* [Business Problem](#-business-problem)
-* [Project Objectives](#-project-objectives)
-* [Project Planning](#-project-planning)
-* [Data Discovery](#-data-discovery)
-* [SQL Analysis](#-sql-analysis)
-* [Data Cleaning & ETL](#-data-cleaning--etl)
-* [Data Modeling](#-data-modeling)
-* [DAX Measures](#-dax-measures)
-* [Power BI Dashboard](#-power-bi-dashboard)
-* [Business Questions](#-business-questions)
-* [Repository Structure](#-repository-structure)
-* [How to Run the Project](#-how-to-run-the-project)
-* [Limitations](#-limitations)
-* [Learning Outcomes](#-learning-outcomes)
-
----
-
 # ❗ Business Problem
 
 AtliQ Hardware is presented in the learning case study as an India-based company that supplies computer hardware and peripherals across different markets.
@@ -307,10 +288,6 @@ The transaction table acts as the central fact table, while customers, products,
 
 * `Key Measures`
 * `Profit Target 2`
-
-### Data Model
-
-![Data Model](./image/Data%20model.png)
 
 ### Data Model & Key Measures
 
@@ -783,18 +760,6 @@ Key Insights
 Profit Analysis
    ↓
 Performance Insights
-```
-
----
-
-# ⚠️ Limitations
-
-* The project uses a learning/case-study dataset rather than a live enterprise data source.
-* USD-to-INR conversion uses the fixed assumption **1 USD = 75 INR**.
-* The exchange-rate assumption is not a live foreign-exchange rate.
-* Source-data quality limitations are part of the learning dataset.
-* This is a portfolio implementation and not an official internal AtliQ Hardware system.
-* Automated refresh, governance, security and enterprise data-management processes are outside the current project scope.
 
 ---
 
@@ -802,29 +767,6 @@ Performance Insights
 
 This project provided practical experience across the end-to-end data analytics workflow.
 
-### Technical Skills
-
-* SQL
-* MySQL
-* MySQL Workbench
-* Power Query
-* ETL
-* Data Cleaning
-* Data Modeling
-* DAX
-* Power BI
-
-### Analytics Skills
-
-* Data Exploration
-* Business Analysis
-* KPI Development
-* Year-over-Year Analysis
-* Profitability Analysis
-* Target Analysis
-* Data Visualization
-* Dashboard Design
-* Data Storytelling
 
 ### End-to-End Workflow
 
