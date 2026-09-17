@@ -135,14 +135,6 @@ The first step was to understand the available tables and identify data-quality 
 | `sales.markets`      | Dimension | Market and geographic information |
 | `sales.date`         | Dimension | Date, month and year information  |
 
-### Database Import
-
-The database was imported into **MySQL Workbench** for initial exploration and SQL analysis.
-
-![Data Import](./image/Data%20Import.png)
-
-![Import Completed](./image/Import%20completed.png)
-
 ---
 
 # 🧮 SQL Analysis
